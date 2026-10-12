@@ -54,3 +54,5 @@ The notebook caches downloaded and processed files in Google Drive so later runs
 - Google Earth Engine is used for Sentinel-1 and Sentinel-2 processing.
 - The USDA NASS API key is not hard-coded into the public notebook.
 - See the notebook itself for the full workflow, processing details, and analysis.
+
+## 2026/11/04
