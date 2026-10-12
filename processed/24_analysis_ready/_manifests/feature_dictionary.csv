@@ -1,0 +1,32 @@
+feature,source_family,product,variable,unit,temporal_aggregation,notes
+blue,satellite,mod09_sr,blue,reflectance,mean,
+et,satellite,mod16_et,et,kg/m2/8-day (equiv. mm/8-day water),sum,
+evi,satellite,mod13_vi,evi,1,mean,
+fpar,satellite,mod15_lai_fpar,fpar,fraction,mean,
+gpp_mod17,satellite,mod17_gpp,gpp,kg C/m2/8-day,sum,MOD17 GPP; kept separate from NTSG; no cross-product gap filling
+gpp_ntsg,satellite,umt_gpp,gpp_ntsg,kg C/m2/8-day,sum,UMT/NTSG GPP; kept separate from MOD17; no cross-product gap filling
+green,satellite,mod09_sr,green,reflectance,mean,
+lai,satellite,mod15_lai_fpar,lai,m2/m2,mean,
+lst_day_c,satellite,mod11_lst,lst_day_c,degC,mean,
+lst_night_c,satellite,mod11_lst,lst_night_c,degC,mean,
+mndwi,satellite,mod09_sr,mndwi,1,mean,"MOD09 per-pixel normalized difference (green-swir1)/(green+swir1), after QA"
+ndmi,satellite,mod09_sr,ndmi,1,mean,"MOD09 per-pixel normalized difference (nir-swir1)/(nir+swir1), after QA"
+ndvi,satellite,mod13_vi,ndvi,1,mean,
+ndwi,satellite,mod09_sr,ndwi,1,mean,"MOD09 per-pixel normalized difference (green-nir)/(green+nir), after QA"
+nir,satellite,mod09_sr,nir,reflectance,mean,
+pet,satellite,mod16_et,pet,kg/m2/8-day (equiv. mm/8-day water),sum,
+ppt_mm,climate,prism_daily_4km,ppt,mm/month,sum,PRISM daily precipitation summed within month/season
+psn_net_mod17,satellite,mod17_gpp,psn_net,kg C/m2/8-day,sum,
+red,satellite,mod09_sr,red,reflectance,mean,
+swir1,satellite,mod09_sr,swir1,reflectance,mean,
+swir2,satellite,mod09_sr,swir2,reflectance,mean,
+swir_1230,satellite,mod09_sr,swir_1230,reflectance,mean,
+tdmean_c,climate,prism_daily_4km,tdmean,degC,mean,
+tmax_c,climate,prism_daily_4km,tmax,degC,mean,
+tmean_c,climate,prism_daily_4km,tmean,degC,mean,
+tmin_c,climate,prism_daily_4km,tmin,degC,mean,
+vpdmax_hpa,climate,prism_daily_4km,vpdmax,hPa,mean,
+vpdmin_hpa,climate,prism_daily_4km,vpdmin,hPa,mean,
+cdl_rice_area_acres,landcover,USDA_CDL,rice_area,acres,annual,Actual annual CDL class-3 rice area; no proxy year
+cdl_rice_area_hectares,landcover,USDA_CDL,rice_area,hectares,annual,Actual annual CDL class-3 rice area; no proxy year
+cdl_rice_pixels,landcover,USDA_CDL,rice_pixels,30m pixels,annual,Actual annual CDL class-3 pixel count

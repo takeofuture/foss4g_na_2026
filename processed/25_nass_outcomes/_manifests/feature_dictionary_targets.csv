@@ -1,0 +1,5 @@
+feature,role,source,unit,notes
+nass_planted_acres,annual outcome/context,USDA NASS Quick Stats,ACRES,Statewide annual rice acres planted; repeated across months only for convenient joins.
+nass_harvested_acres,annual outcome/context,USDA NASS Quick Stats,ACRES,Statewide annual rice acres harvested.
+nass_yield_lb_acre,candidate ML target,USDA NASS Quick Stats,LB / ACRE,Statewide annual yield; useful target when focusing on biological/productivity response rather than planted area decisions.
+nass_production_cwt,candidate ML target,USDA NASS Quick Stats,CWT,Statewide annual production; combines yield with harvested-area decisions.

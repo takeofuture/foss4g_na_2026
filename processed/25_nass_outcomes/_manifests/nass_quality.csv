@@ -1,0 +1,5 @@
+metric,column,expected_years,nonmissing_years,missing_years,unit
+planted_acres,nass_planted_acres,19,19,,ACRES
+harvested_acres,nass_harvested_acres,19,19,,ACRES
+yield,nass_yield_lb_acre,19,19,,LB / ACRE
+production,nass_production_cwt,19,19,,CWT
