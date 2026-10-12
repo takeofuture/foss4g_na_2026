@@ -1,4 +1,5 @@
-# foss4g_na_2026　![Uploading image.png…]()
+# foss4g_na_2026　<img width="258" height="260" alt="image" src="https://github.com/user-attachments/assets/6baf8dbb-c75c-49ae-99cd-857f02bdd49a" />
+
 
 
 ## 2026/11/03 — `20261103_LT_California_Rice_PUBLIC.ipynb` (Google Colab)
