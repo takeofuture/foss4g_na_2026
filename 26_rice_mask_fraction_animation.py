@@ -15,7 +15,7 @@ Assumptions
   - Input is under:
       /opt/foss4g_2026/processed/21_cdl_rice
   - Files are annual TIFFs for rice mask / rice fraction
-  - Output MP4 is for presentation/slides
+  - Output MP4 is for visualization
   - FPS is fixed to 2 unless changed by CLI
 
 Examples
