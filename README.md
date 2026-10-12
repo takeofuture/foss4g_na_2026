@@ -53,8 +53,7 @@ The notebook caches downloaded and processed files in Google Drive so later runs
 - The USDA NASS API key is not hard-coded into the public notebook.
 - See the notebook itself for the full workflow, processing details, and analysis.
 
-## 2026/11/04
-* California Rice Monitoring — Preprocessing (Steps 20–26)
+## 2026/11/04　California Rice Monitoring Workflow (Steps 20–26 & 31)
 
 These scripts prepare the raw geospatial and agricultural data used by the California rice analysis notebook.
 
