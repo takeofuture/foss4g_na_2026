@@ -132,3 +132,15 @@ config.py
 The outputs from Steps 20–25 are used by the downstream analysis / machine-learning notebook.
 <img width="1317" height="1060" alt="image" src="https://github.com/user-attachments/assets/00859eb5-8cbe-4685-a115-c5579f11a3c3" />
 
+## Code Files
+
+| Step | File | Description |
+|---|---|---|
+| 20 | `20_california_rice_raw_native_downloader.py` | Downloads raw MODIS, NTSG GPP, USDA CDL, and PRISM data while preserving native formats, grids, georeferencing, and metadata. |
+| 21 | `21_cdl_rice_mask_and_fraction.py` | Creates annual California rice masks from USDA CDL class 3 and generates rice-fraction rasters aligned to the native MODIS grids. |
+| 22 | `22_remote_sensing_physical_rules.py` | Defines product-specific scale factors, offsets, NoData handling, QA rules, units, and valid physical ranges for the remote-sensing products. |
+| 23 | `23_rice_area_spatial_summary.py` | Applies the physical/QA rules and calculates rice-area-weighted spatial summaries on each product's native grid. |
+| 24 | `24_analysis_ready_features.py` | Builds monthly and seasonal analysis-ready feature tables and integrates PRISM climate variables. |
+| 25 | `25_nass_outcomes_and_join.py` | Downloads and cleans USDA NASS California rice statistics and joins acreage, yield, and production outcomes to the feature tables. |
+| 26 | `26_rice_mask_fraction_animation.py` | Creates MP4 animations showing annual changes in rice masks and rice fractions. |
+| 31 | `31_20261104_TALK_california_rice_analysis.ipynb` | Google Colab notebook for quality checks, exploratory analysis, correlation analysis, climate-stress exploration, and leave-one-year-out machine-learning evaluation of rice yield and production. |
