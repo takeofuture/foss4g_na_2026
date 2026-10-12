@@ -1,4 +1,5 @@
-# foss4g_na_2026
+# foss4g_na_2026　![Uploading image.png…]()
+
 
 ## 2026/11/03 — `20261103_LT_California_Rice_PUBLIC.ipynb` (Google Colab)
 
