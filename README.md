@@ -1,7 +1,5 @@
 # foss4g_na_2026　<img width="258" height="260" alt="image" src="https://github.com/user-attachments/assets/6baf8dbb-c75c-49ae-99cd-857f02bdd49a" />
 
-
-
 ## 2026/11/03 — `20261103_LT_California_Rice_PUBLIC.ipynb` (Google Colab)
 
 FOSS4G North America 2026 lightning talk notebook for California rice monitoring.
@@ -56,3 +54,81 @@ The notebook caches downloaded and processed files in Google Drive so later runs
 - See the notebook itself for the full workflow, processing details, and analysis.
 
 ## 2026/11/04
+* California Rice Monitoring — Preprocessing (Steps 20–26)
+
+These scripts prepare the raw geospatial and agricultural data used by the California rice analysis notebook.
+
+### Requirements
+
+- Python 3 on Linux / ex EC2
+- GDAL command-line tools (`gdalinfo`, `gdal_translate`)
+- Python packages used by the scripts, including `pandas`, `numpy`, `requests`, `rasterio`, `pyproj`, `earthaccess`, `matplotlib`, and `imageio`
+- Sufficient local/EBS storage for the raw satellite and climate archive
+
+#### Credentials / API access
+
+**NASA Earthdata Login**
+- Required for NASA MODIS downloads in Step 20
+- Set in `config.py`:
+
+```python
+NASA_USERNAME = "YOUR_NASA_EARTHDATA_USERNAME"
+NASA_PASSWORD = "YOUR_NASA_EARTHDATA_PASSWORD"
+```
+
+**USDA NASS Quick Stats**
+- Requires a NASS API key for Step 25 when downloading fresh data
+- No NASS username/password is used by these scripts
+- Set either as an environment variable:
+
+```bash
+export NASS_API_KEY="YOUR_NASS_API_KEY"
+```
+
+- or in `config.py`:
+
+```python
+NASS_API_KEY = "YOUR_NASS_API_KEY"
+```
+
+Do **not** commit `config.py` or real credentials/API keys to GitHub.
+
+Recommended `.gitignore` entry:
+
+```text
+config.py
+```
+
+### Preprocessing Scripts
+
+- `20_a_california_rice_raw_native_downloader.py`  
+  Downloads MODIS, NTSG GPP, USDA CDL, and PRISM data in their native formats and records georeferencing / metadata.
+
+- `21_cdl_rice_mask_and_fraction.py`  
+  Creates annual California rice masks from CDL and rice-fraction rasters on the native MODIS grids.
+
+- `22_remote_sensing_physical_rules.py`  
+  Defines scale, offset, NoData, QA, units, and physical-value interpretation rules for the remote-sensing products.
+
+- `23_rice_area_spatial_summary.py`  
+  Applies the Step-22 rules over annual rice areas and creates rice-area-weighted spatial summaries.
+
+- `24_analysis_ready_features.py`  
+  Builds compact monthly and seasonal analysis-ready feature tables and adds PRISM climate variables.
+
+- `25_nass_outcomes_and_join.py`  
+  Downloads / caches USDA NASS California rice statistics and joins acreage, yield, and production outcomes to the feature tables.
+
+- `26_rice_mask_fraction_animation.py`  
+  Creates MP4 animations of annual rice masks / rice fractions for visualization.
+
+### Typical Order
+
+```text
+20 → 21 → 22 → 23 → 24 → 25
+     └──────────────→ 26 (visualization)
+```
+
+The outputs from Steps 20–25 are used by the downstream analysis / machine-learning notebook.
+<img width="1317" height="1060" alt="image" src="https://github.com/user-attachments/assets/00859eb5-8cbe-4685-a115-c5579f11a3c3" />
+
